@@ -11,6 +11,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="container">
+      <div id="header">
+        <%= render "header" %>
+      </div>
+      <div id="sidebar">
+        <%= render "sidebar" %>
+      </div>
+      <div id="content">
+        <%= yield %>
+        <%= render "content" %>
+      </div>
+      <div id="fotter">
+        <%= render "fotter" %>
+      </div>
+    </div>
   </body>
 </html>

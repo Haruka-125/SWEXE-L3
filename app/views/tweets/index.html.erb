@@ -2,14 +2,43 @@
     <%= flash[:notice] %>
 <% end %>
 
+<div class="header_class">
+    <div id="tweet">
+        <h3>ツイート</h3>
+    </div>
+    <div id="reply">
+        <h3>ツイートと返信</h3>
+    </div>
+    <div id="media">
+        <h3>メディア</h3>
+    </div>
+    <div id="good">
+        <h3>いいね</h3>
+    </div>
+</div>
+
 <% @tweets.each do |e| %>
+<div class="tweet_index">
+    <div class="account_index">
+        <%= image_tag 'sn.jpg' %>
+        <h3 id="account_name">
+            いおり
+        </h3>
+        <p id="account_id">
+            @iori_i7
+        </p>
+        <p id="tweet_date">
+            <%= e.tdate.strftime('%m月%d日') %>
+        </p>
+    </div>
+</div>
     <p>
         <%= e.message %>
-        <%= ((Time.current - e.tdate)/60).to_i %>分
-        <%=link_to '削除', "/tweets/#{e.id}", data: { turbo_method: :delete } %>
-        <%=link_to '表示', "/tweets/#{e.id}" %>
-        <%=link_to '編集', "/tweets/#{e.id}/edit" %>
+        <!--<%= ((Time.current - e.tdate)/60).to_i %>分-->
+        <%=link_to '削除',  tweet_path(e), data: { turbo_method: :delete } %> <!--"/tweets/#{e.id}"-->
+        <%=link_to '表示',  tweet_path(e) %> <!--"/tweets/#{e.id}"-->
+        <%=link_to '編集',  edit_tweet_path(e) %> <!--"/tweets/#{e.id}/edit"-->
     </p>
 <% end %>
 
-<%= link_to '新規追加', 'tweets/new' %>
+

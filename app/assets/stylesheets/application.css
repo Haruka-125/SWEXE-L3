@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+#header {
+    display: flex;
+    justify-content: center;
+    background-color: #1da1f2;
+}
+
+.header_class {
+    display: flex;
+    justify-content: space-between;
+}
+
+.account_index {
+    display: flex;
+}
+.account_index img {
+    width: 70px;
+    height: 70px;
+}
+
+.sidebar {
+    float: left;
+}
+
+.sidebar img{
+    width: 70px;
+    height: 70px;
+}
+
+.home {
+    display: flex;
+}
+
+.hush {
+    display: flex;
+}
+
+.bell {
+    display: flex;
+}
+
+.mail {
+    display: flex;
+}
+
+.bookmark {
+    display: flex;
+}
+
+.list {
+    display: flex;
+}
+
+.profile {
+    display: flex;
+}
+
+.view {
+    display: flex;
+}
+
+.new {
+    display: flex;
+}
